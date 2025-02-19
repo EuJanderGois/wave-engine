@@ -1,0 +1,9 @@
+sections:
+  file-explorer: "File Explorer"
+  console: "Console"
+
+  properties: "Properties"
+  actions: "Actions"
+
+  node-tree: "Node Tree"
+  transform: "Transform"

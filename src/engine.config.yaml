@@ -1,0 +1,13 @@
+editor:
+  width: 1280
+  height: 720
+  version: 0.1.0
+  name: Wave Engine
+  vsync: true
+  high-dpi: true
+  full-screen: false
+  icon: "wave.png"
+  target-fps: 60
+  clear-color: white
+  default-theme: themes/default
+  default-lang: lang/en-us
