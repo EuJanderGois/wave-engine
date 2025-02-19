@@ -40,3 +40,7 @@ Para distribuição será o mesmo processo, com a diferença de que será necess
 - **include**: Bibliotecas locais.
 - **resources**: Ativos.
 - **src**: Código fonte.
+
+## Licença de uso
+
+Você pode ver a licensa [clicando aqui](LICENSE.MD).
