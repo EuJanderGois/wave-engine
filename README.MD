@@ -43,4 +43,4 @@ Para distribuição será o mesmo processo, com a diferença de que será necess
 
 ## Licença de uso
 
-Você pode ver a licensa [clicando aqui](LICENSE.MD).
+Você pode ver a licença [clicando aqui](LICENSE.MD).
