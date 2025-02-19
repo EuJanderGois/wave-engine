@@ -1,12 +1,12 @@
 EXECUTABLE_NAME = out.exe
 TARGET = build/$(EXECUTABLE_NAME)
-SOURCES = src/main.cpp
+SOURCES = src/main.cpp src/schemas/editor_config/editor_config.cpp
 
 INCLUDE_DIR = include
 
 CC = g++
-CFLAGS = $(addprefix -I, $(INCLUDE_DIR))
-LDFLAGS = $(addprefix -L, -lyaml-cpp -lraylib -L/mingw64/lib -L/mingw64/bin -L/mingw64/include
+CFLAGS = -Iinclude -Isrc/schemas/editor_config
+LDFLAGS = -lyaml-cpp -lraylib -L/mingw64/lib -L/mingw64/bin -L/mingw64/include
 
 $(TARGET): $(SOURCES)
 	@echo "==== Building ($(TARGET)) ===="
@@ -23,10 +23,18 @@ $(TARGET): $(SOURCES)
 	@echo "==== Checking if styles directory exists ===="
 	@if [ -d "./build/styles" ]; then \
 		rm -rf ./build/styles; \
-	fi; \
+	fi \
 
 	@if [ -d "./src/styles" ]; then \
 		cp -r src/styles ./build/styles/; \
+	fi
+
+	@if [ -f "./build/engine.config.yaml" ]; then \
+		rm -f ./build/engine.config.yaml; \
+	fi; \
+
+	@if [ -f "./src/engine.config.yaml" ]; then \
+		cp ./src/engine.config.yaml ./build/; \
 	fi
 
 run: $(TARGET)

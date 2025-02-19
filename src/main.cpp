@@ -1,12 +1,15 @@
 #include <iostream>
-#include "yaml-cpp/yaml.h"
 #include "raylib.h"
+#include "schemas/editor_config/editor_config.h"
 
 using namespace std;
 
 int main()
 {
-    YAML::Node config = YAML::LoadFile("styles/config.yaml");
+
+    EditorConfig editorConfig("./engine.config.yaml");
+
+    cout << editorConfig.getName() << endl;
 
     const int screenWidth = 800;
     const int screenHeight = 600;
@@ -15,7 +18,7 @@ int main()
     while (!WindowShouldClose()) {
         BeginDrawing();
         ClearBackground(RAYWHITE);
-        DrawText(config["message"].as<string>().c_str(), 20, 20, 20, BLACK);
+        DrawText(editorConfig.getName().c_str(), 20, 20, 20, BLACK);
         EndDrawing();
     }
     CloseWindow();
