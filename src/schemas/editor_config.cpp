@@ -6,50 +6,44 @@ using namespace std;
 
 EditorConfig::EditorConfig(const string& filename)
 {
-    this->loadConfig(filename);
-}
-
-void EditorConfig::loadConfig(const string& filename)
-{
-
     YAML::Node configNode = YAML::LoadFile(filename);
 
-    if (configNode["width"]) {
-        config.width = configNode["width"].as<int>();
+    if (configNode["editor"]["width"]) {
+        this->config.width = configNode["editor"]["width"].as<int>();
     }
-    if (configNode["height"]) {
-        config.height = configNode["height"].as<int>();
+    if (configNode["editor"]["height"]) {
+        this->config.height = configNode["editor"]["height"].as<int>();
     }
-    if (configNode["version"]) {
-        config.version = configNode["version"].as<string>();
+    if (configNode["editor"]["version"]) {
+        this->config.version = configNode["editor"]["version"].as<string>();
     }
-    if (configNode["name"]) {
-        config.name = configNode["name"].as<string>();
+    if (configNode["editor"]["name"]) {
+        this->config.name = configNode["editor"]["name"].as<string>();
         cout << "Editor Name: " << config.name << endl;
     }
-    if (configNode["vsync"]) {
-        config.vsync = configNode["vsync"].as<bool>();
+    if (configNode["editor"]["vsync"]) {
+        this->config.vsync = configNode["editor"]["vsync"].as<bool>();
     }
-    if (configNode["high-dpi"]) {
-        config.highDPI = configNode["high-dpi"].as<bool>();
+    if (configNode["editor"]["high-dpi"]) {
+        this->config.highDPI = configNode["editor"]["high-dpi"].as<bool>();
     }
-    if (configNode["full-screen"]) {
-        config.fullScreen = configNode["full-screen"].as<bool>();
+    if (configNode["editor"]["full-screen"]) {
+        this->config.fullScreen = configNode["editor"]["full-screen"].as<bool>();
     }
-    if (configNode["icon"]) {
-        config.icon = configNode["icon"].as<string>();
+    if (configNode["editor"]["icon"]) {
+        this->config.icon = configNode["editor"]["icon"].as<string>();
     }
-    if (configNode["target-fps"]) {
-        config.targetFPS = configNode["target-fps"].as<int>();
+    if (configNode["editor"]["target-fps"]) {
+        this->config.targetFPS = configNode["editor"]["target-fps"].as<int>();
     }
-    if (configNode["clear-color"]) {
-        config.clearColor = configNode["clear-color"].as<string>();
+    if (configNode["editor"]["clear-color"]) {
+        this->config.clearColor = configNode["editor"]["clear-color"].as<string>();
     }
-    if (configNode["default-theme"]) {
-        config.defaultTheme = configNode["default-theme"].as<string>();
+    if (configNode["editor"]["default-theme"]) {
+        this->config.defaultTheme = configNode["editor"]["default-theme"].as<string>();
     }
-    if (configNode["default-lang"]) {
-        config.defaultLang = configNode["default-lang"].as<string>();
+    if (configNode["editor"]["default-lang"]) {
+        this->config.defaultLang = configNode["editor"]["default-lang"].as<string>();
     }
 }
 

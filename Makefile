@@ -1,11 +1,11 @@
 EXECUTABLE_NAME = out.exe
 TARGET = build/$(EXECUTABLE_NAME)
-SOURCES = src/main.cpp src/schemas/editor_config/editor_config.cpp
+SOURCES = src/main.cpp src/schemas/editor_config.cpp
 
 INCLUDE_DIR = include
 
 CC = g++
-CFLAGS = -Iinclude -Isrc/schemas/editor_config
+CFLAGS = -Iinclude
 LDFLAGS = -lyaml-cpp -lraylib -L/mingw64/lib -L/mingw64/bin -L/mingw64/include
 
 $(TARGET): $(SOURCES)

@@ -64,4 +64,4 @@ class EditorConfig
 };
 
 
-#endif
+#endif // CONFIG_H
